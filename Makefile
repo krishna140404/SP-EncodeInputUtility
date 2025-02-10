@@ -12,7 +12,11 @@ obj/fileIo.o: src/fileIo.c inc/encodeInput.h
 
 # Rule for binary_to_asm.o
 obj/binary_to_asm.o: src/binary_to_asm.c inc/binary_to_asm.h
-	gcc -c src/binary_to_asm.c -Iinc -o obj/binary_to_asm.o
+	gcc -c src/binary_to_asm.c -Iinc -o obj/binary_to_asm.
+	
+# Rule for command_parser.o
+obj/command_parser.o: src/command_parser.c inc/command_parser.h
+	gcc -c src/command_parser.c -Iinc -o obj/command_parser.o
 
 # Default target to build everything
 all: bin/encodeProject
