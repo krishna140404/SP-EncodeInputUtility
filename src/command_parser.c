@@ -13,4 +13,17 @@ int parse_command_line(int argc, char** argv, int* mode, char* input_file, char*
     *mode = 0;  // 0 = Assembly mode (default), 1 = S-Record mode
     input_file[0] = '\0';
     output_file[0] = '\0';
+
+    // Parse command-line arguments
+    for (int i = 1; i < argc; i++) {
+        if (strncmp(argv[i], "-i", 2) == 0) {  // Input file
+            if (strlen(argv[i]) > 2) {
+                strcpy(input_file, argv[i] + 2);
+            } else if (i + 1 < argc) {
+                strcpy(input_file, argv[++i]);
+            } else {
+                fprintf(stderr, "Error: Missing input file name.\n");
+                return -1;
+            }
+        } 
 }
