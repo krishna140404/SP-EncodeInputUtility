@@ -43,4 +43,12 @@ int parse_command_line(int argc, char** argv, int* mode, char* input_file, char*
             printf("Usage: encodeInput [-i inputfile] [-o outputfile] [-srec] [-h]\n");
             exit(0);
         } 
+        else {  // Invalid argument
+            fprintf(stderr, "Error: Invalid option '%s'\n", argv[i]);
+            printf("Usage: encodeInput [-i inputfile] [-o outputfile] [-srec] [-h]\n");
+            return -1;
+        }
+    }
+
+    return 0;
 }
