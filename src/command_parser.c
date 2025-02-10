@@ -26,4 +26,14 @@ int parse_command_line(int argc, char** argv, int* mode, char* input_file, char*
                 return -1;
             }
         } 
+        else if (strncmp(argv[i], "-o", 2) == 0) {  // Output file
+            if (strlen(argv[i]) > 2) {
+                strcpy(output_file, argv[i] + 2);
+            } else if (i + 1 < argc) {
+                strcpy(output_file, argv[++i]);
+            } else {
+                fprintf(stderr, "Error: Missing output file name.\n");
+                return -1;
+            }
+        } 
 }
