@@ -1,8 +1,28 @@
+/*
+ * FILE: command_parser.c
+ * PROJECT: encodeInput Utility
+ * PROGRAMMER: MANREET THIND (STUDENT ID: 8982315)
+ * FIRST VERSION: 01/26/2025
+ * DESCRIPTION:
+ * This file contains the implementation of the function to parse command-line arguments.
+ * It processes user input, determines the operation mode (Assembly/S-Record), 
+ * extracts file names, and ensures correct program execution.
+ */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "../inc/command_parser.h" 
 
+/*
+ * Name    : parse_command_line
+ * Purpose : Parses command-line arguments to determine the operation mode and input/output filenames.
+ * Input   : argc        - int    - Argument count
+ *           argv        - char** - Argument vector (array of strings)
+ * Outputs : mode        - int*   - Pointer to store the operation mode (assembly/S-Record)
+ *           input_file  - char*  - Buffer to store the input file name
+ *           output_file - char*  - Buffer to store the output file name
+ * Returns : int - 0 on success, -1 on failure
+ */
 int parse_command_line(int argc, char** argv, int* mode, char* input_file, char* output_file) {
     if (argc < 2) {  // If no arguments are provided, print usage and return failure
         printf("Usage: encodeInput [-i inputfile] [-o outputfile] [-srec] [-h]\n");
