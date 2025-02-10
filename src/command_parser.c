@@ -36,4 +36,11 @@ int parse_command_line(int argc, char** argv, int* mode, char* input_file, char*
                 return -1;
             }
         } 
+        else if (strcmp(argv[i], "-srec") == 0) {  // S-Record mode
+            *mode = 1;
+        } 
+        else if (strcmp(argv[i], "-h") == 0) {  // Help
+            printf("Usage: encodeInput [-i inputfile] [-o outputfile] [-srec] [-h]\n");
+            exit(0);
+        } 
 }
