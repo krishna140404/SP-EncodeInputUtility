@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 unsigned char calculate_checksum(int count, int address, unsigned char* data);
-    qwedrfghjkl;'
-    '
+void convert_binary_to_srec(FILE *input, FILE *output);
+
+    
 #endif
