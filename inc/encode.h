@@ -6,3 +6,12 @@
  * DESCRIPTION:
  * This header file declares the functions for encoding the functions altogether.
  */
+#include "binary_to_asm.h"
+#include "binary_to_srec.h"
+#include "command_parser.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int handle_arguments(int argc, char *argv[]);
+

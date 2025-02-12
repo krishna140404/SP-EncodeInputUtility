@@ -11,26 +11,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-int inputFileValidation(char* inputFilename){
+FILE *inputFileValidation(char* inputFilename){
     FILE *inputFile = stdin;
     if (inputFilename) {
         inputFile = fopen(inputFilename, "rb");
         if (!inputFile) {
             fprintf(stderr, "Error: Cannot open input file %s\n", inputFilename);
-            return 1;
+            return NULL;
         }
     }
-    return 0;
+    return inputFile;
 }
 
-int outputFileValidation(char* outputFilename){
+FILE *outputFileValidation(char* outputFilename){
     FILE *outputFile = stdout;
     if (outputFilename){
         outputFile = fopen(outputFilename, "w");
         if (!outputFile) {
             fprintf(stderr, "Error: Cannot open output file %s\n", outputFilename);
-            return 1;
+            return NULL;
         }
     }
-    return 0;
+    return outputFile;
 }
