@@ -11,6 +11,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * Name    : inputFileValidation
+ * Purpose : Validates and opens the input file for reading in binary mode.
+ * Input   : char* inputFilename
+ * Outputs : Prints an error message if the file cannot be opened.
+ * Returns : FILE*
+ */
 FILE *inputFileValidation(char* inputFilename){
     FILE *inputFile = stdin;
     if (inputFilename) {
@@ -22,7 +29,13 @@ FILE *inputFileValidation(char* inputFilename){
     }
     return inputFile;
 }
-
+/*
+ * Name    : outputFileValidation
+ * Purpose : Validates and opens the output file for reading in binary mode.
+ * Input   : char* outputFileValidation
+ * Outputs : Prints an error message if the file cannot be opened.
+ * Returns : FILE*
+ */
 FILE *outputFileValidation(char* outputFilename){
     FILE *outputFile = stdout;
     if (outputFilename){

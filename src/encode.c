@@ -19,7 +19,13 @@
 #include <stdlib.h>
 #include <string.h>
 
-int handle_arguments(int argc, char *argv[]) {
+/*
+ * Name    : handleArguments
+ * Purpose : selects the conversion format (ASM or SREC), and handles help requests.
+ * Input   : int argc, char* argv 
+ * Returns : int - Returns 0 on success, 1 if help is requested.
+ */
+int handleArguments(int argc, char *argv[]) {
     char* inputFilename = NULL;
     char* outputFilename = NULL;
     int srec = 0; //The value of srec is 0 by default and this will be directing to the asm conversion.
@@ -44,7 +50,13 @@ int handle_arguments(int argc, char *argv[]) {
     dataSending();
     return 0;
 }
-
+/*
+ * Name    : dataSending
+ * Purpose : Validates input and output file paths, opens the files, and 
+ *           calls the conversion functions (ASM or SREC).
+ * Input   : Nothing
+ * Returns : void
+ */
 void dataSending(void){
     FILE* inputData = inputFileValidation(char* inputFilename);
     FILE* outputData = outputFileValidation(char* outputFilename);
