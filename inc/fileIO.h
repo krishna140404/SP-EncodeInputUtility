@@ -12,5 +12,5 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int inputFileValidation(char* inputFile);
-int outputFileValidation(char* outputFile);
+FILE *inputFileValidation(char* inputFile);
+FILE *outputFileValidation(char* outputFile);
