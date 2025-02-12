@@ -40,4 +40,6 @@ void convert_binary_to_srec(FILE *input, FILE *output) {
     if (ferror(input)) {
         fprintf(stderr, "Error: Reading from input file failed.\n");
     }
+
+    fclose(output);
 }
